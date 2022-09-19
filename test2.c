@@ -49,23 +49,26 @@ void main()
 }
 
 void logoHeading()
-{
-    printf("                 //     \n");
-    printf("   /            //     \\\n");
-    printf("  /            //       \\\n");
-    printf(" /            //         \\\n");
-    printf("/            //           \\\n");
-    printf("\\           //            /\n");
-    printf(" \\         //            /\n");
-    printf("  \\       //            /\n");
-    printf("   \\     //            /\n");
-    printf("        //             \n");
-    printf("\nUMT POS SYSTEM");
+{   
+    printf("\n\n");
+    printf("%78s\n", "**********************************************************");
+    printf("%77s\n", "*                                                        *");
+    printf("%76s\n", "*       ==    ==     ==          ==      ========        *");
+    printf("%75s\n", "*       ==    ==     ===        ===      ========        *");
+    printf("%74s\n", "*       ==    ==     ====      ====         ==           *");
+    printf("%73s\n", "*       ==    ==     == ==    == ==         ==           *");
+    printf("%72s\n", "*        ==  ==      ==  ==  ==  ==         ==           *");
+    printf("%71s\n", "*          ==        ==   ====   ==         ==           *");
+    printf("%70s\n", "*                                                        *");
+    printf("%69s\n", "**********************************************************");
+    printf("%45s\n", "==============");
+    printf("%45s\n", "UMT POS SYSTEM");
+    printf("%45s\n", "==============");
 }
 
 void exitP()
 {
-    printf("\nXXXXXXXXXXXXXXXXXXXXX\n");
+    printf("\nPlease visit us again\n");
     printf("Exiting the program...\n");
 
     system("pause");
@@ -101,53 +104,76 @@ void menu()
 int fieldSelect()
 {
     int selection;
-    printf("\nSelect a field to view:\n");
+
+    printf("Select a field to view:\n");
+    printf("=====================================\n");
     printf("1 = Software Development Programming\n");
     printf("2 = Web Programming\n");
     printf("3 = Mobile Programming\n");
     printf("4 = Mathematics for Programming\n");
-    printf("Input: ");
-    scanf("%d", &selection);
-    rewind(stdin);
+    printf("=====================================\n");
+
+    do {
+        printf("\nWhich field would you like to view? : ");
+        scanf("%d", &selection);
+        rewind(stdin);
+        if (selection < 1 || selection > 4)
+            printf("Please enter a number between 1-4\n");
+    } while (selection < 1 || selection > 4);
 
     return selection;
-
 }
 
 void field1()
 {
     printf("\nSoftware Development Programming Books :\n");
-    printf("A = Beginning with Programming Logic and Design RM69.00\n");
-    printf("B = C Programming RM70.00\n");
-    printf("C = Programming Fundamentals RM55.50\n");
-    printf("D = C++ Programming RM75.00\n");
+    printf("=============================================== ========\n");
+    printf("%-47s %7s\n", "Book", "Price");
+    printf("=============================================== ========\n");
+    printf("%-47s %8s\n", "A = Beginning with Programming Logic and Design", "RM69.00");
+    printf("%-47s %8s\n", "B = C Programming", "RM70.00");
+    printf("%-47s %8s\n", "C = Programming Fundamentals", "RM55.50");
+    printf("%-47s %8s\n", "D = C++ Programming", "RM75.00");
+    printf("=============================================== ========\n");
 }
 
 void field2()
 {
-    printf("\nWeb Programming :\n ");
-    printf("E = HTML and CSS Design RM58.00\n");
-    printf("F = Web Programing RM65.00\n");
-    printf("G = ASP .NET Programming RM89.00\n");
-    printf("H = Javascript Programming RM79.00\n");
+    printf("\nWeb Programming :\n");
+    printf("=============================================== ========\n");
+    printf("%-47s %7s\n", "Book", "Price");
+    printf("=============================================== ========\n");
+    printf("%-47s %8s\n", "E = HTML and CSS Design", "RM58.00");
+    printf("%-47s %8s\n", "F = Web Programing", "RM65.00");
+    printf("%-47s %8s\n", "G = ASP .NET Programming", "RM89.00");
+    printf("%-47s %8s\n", "H = Javascript Programming", "RM79.00");
+    printf("=============================================== ========\n");
 }
 
 void field3()
 {
-    printf("\nMobile Programming :\n ");
-    printf("I = Mobile Design and Programming RM73.50\n");
-    printf("J = Building Mobile App RM80.00\n");
-    printf("K = Android Programming RM50.00\n");
-    printf("L = Objective C Programming RM75.00\n");
+    printf("\nMobile Programming :\n");
+    printf("=============================================== ========\n");
+    printf("%-47s %7s\n", "Book", "Price");
+    printf("=============================================== ========\n");
+    printf("%-47s %8s\n", "I = Mobile Design and Programming", "RM73.50");
+    printf("%-47s %8s\n", "J = Building Mobile App", "RM80.00");
+    printf("%-47s %8s\n", "K = Android Programming", "RM50.00");
+    printf("%-47s %8s\n", "L = Objective C Programming", "RM75.00");
+    printf("=============================================== ========\n");
 }
 
 void field4()
 {
     printf("\nMathematics for Programming: \n");
-    printf("M = Discrete Mathematics RM69.00\n");
-    printf("N = Linear Algebra RM99.00\n");
-    printf("O = Algebra and Trigonometry RM88.50\n");
-    printf("P = Calculus RM109.00\n\n");
+    printf("=============================================== ========\n");
+    printf("%-47s %7s\n", "Book", "Price");
+    printf("=============================================== ========\n");
+    printf("%-47s %8s\n", "M = Discrete Mathematics", "RM69.00");
+    printf("%-47s %8s\n", "N = Linear Algebra", "RM80.00");
+    printf("%-47s %8s\n", "O = Algebra and Trigonometry", "RM50.00");
+    printf("%-47s %8s\n", "P = Calculus", "RM109.00");
+    printf("=============================================== ========\n");
 }
 
 void order()
@@ -171,7 +197,7 @@ void order()
             //Ordering
             do
             {
-                printf("\nBook A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P (X = Exit) : ");
+                printf("\nWhich book would you like to buy?(A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P) (X = Exit) : ");
                 scanf(" %c", &book);
                 rewind(stdin);
                 book = toupper(book);
@@ -180,14 +206,16 @@ void order()
                 {
                     // The number of books the user wants to order
                     do
-                    {   
-                        printf("Quantity : ");
+                    {
+                        printf("Quantity (1~9): ");
                         rewind(stdin);
                         scanf("%d", &qty);
                         rewind(stdin);
                         if (qty <= 0)
-                            printf("Error : Invalid value\n");
-                    } while (qty <= 0);
+                            printf("Error : Invalid value\n\n");
+                        else if (qty > 9)
+                            printf("You can only buy up to 9 books\n\n");
+                    } while (qty <= 0 || qty > 9);
                     //Transfer data to the books's respected location in the array based on the book chosen
                     bookQty[un] += qty;
                     total[un] += qty;
@@ -324,5 +352,6 @@ void summary() {
     printf("\n%s RM%.2lf\n", "TOTAL DISCOUNT GIVEN: ", ttlDis);
 
     //The end of the program
+    logoHeading();
     exitP();
 }
