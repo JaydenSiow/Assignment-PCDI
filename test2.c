@@ -110,12 +110,12 @@ char nextTest()
     char testNext;
     do {
         inputTest[0] = '\0';
-        printf("\nGo to the next order? (Y = Yes, N = No) : ");
+        printf("Go to the next order? (Y = Yes, N = No) : ");
         scanf("%c%[^\n]", &testNext, inputTest);//This validation works the same as the function above
         rewind(stdin);
         printf("\n");
         if (inputTest[0] != '\0')
-            printf("\n**Invalid Input**\nPlease enter a choice that has been given.\n");
+            printf("**Invalid Input**\nPlease enter a choice that has been given.\n\n");
     } while (inputTest[0] != '\0');
     return testNext;
 }
@@ -219,7 +219,7 @@ void exitP()
 
 void exitMsg()
 {
-    printf("\n\n%59s", "Exiting so soon ?\n");
+    printf("\n%59s", "Exiting so soon ?\n");
     printf("%59s", "What a shame :(\n\n");
 }
 
@@ -437,7 +437,7 @@ void order()
                     printf("%s", "|");
                     printf("%15s | RM%10.2lf|\n", "Total to Pay", totalPay);
                     printf("%71s\n", "+====================+================+=============+");
-                    printf("\n%67s\n", "HAVE A NICE DAY! WE HOPE TO SEE YOU SOON!");
+                    printf("\n\n%67s\n\n\n", "HAVE A NICE DAY! WE HOPE TO SEE YOU SOON!");
                 }
                 //If the user cancels the order, the data from the order is cleared
                 else if (confirm == 'C')
@@ -468,7 +468,7 @@ char next()
         nextOrder = nextTest();
         nextOrder = toupper(nextOrder);
         if (nextOrder != 'Y' && nextOrder != 'N')//Input validation
-            printf("Please enter a choice that has been given.\n");
+            printf("Please enter a choice that has been given.\n\n");
     } while (nextOrder != 'Y' && nextOrder != 'N');
 
     return nextOrder;
